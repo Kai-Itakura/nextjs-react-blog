@@ -1,5 +1,11 @@
+import Logo from "./logo";
+
 const Footer = () => {
-    return <footer>FOOTER</footer>;
+    return (
+        <footer>
+            <Logo />
+        </footer>
+    );
 }
 
 export default Footer;
