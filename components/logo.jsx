@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from 'styles/logo.module.css';
+import classes from 'styles/logo.module.scss';
 
 const Logo = ({ boxOn = false }) => {
     return (

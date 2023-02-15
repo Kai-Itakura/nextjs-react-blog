@@ -1,4 +1,4 @@
-import classes from 'styles/hero.module.css'
+import classes from 'styles/hero.module.scss'
 
 const Hero = ({ title, subtitle, imageOn = false }) => {
     return (
