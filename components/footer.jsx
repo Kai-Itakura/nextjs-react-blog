@@ -1,13 +1,16 @@
 import Logo from "./logo";
 import classes from 'styles/footer.module.scss';
+import Container from "./container";
 
 const Footer = () => {
     return (
         <footer className={classes.wrapper}>
-            <div className={classes.flexContainer}>
-                <Logo />
-                [ソーシャル]
-            </div>
+            <Container>
+                <div className={classes.flexContainer}>
+                    <Logo />
+                    [ソーシャル]
+                </div>
+            </Container>
         </footer>
     );
 }
