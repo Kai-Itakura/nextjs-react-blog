@@ -22,7 +22,7 @@
 .sideBySideCenter {
     composes: sideBySide;
     align-items: center;
-    justify-content: center; 
+    text-align: center; 
 
     @include mix.mq {
         text-align: left;
