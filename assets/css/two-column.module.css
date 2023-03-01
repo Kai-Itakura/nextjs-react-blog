@@ -17,7 +17,7 @@
   .flexContainer .sidebar * {
     text-align: right;
   }
-  .flexContainer .sidebar:is(div, ul) {
+  .flexContainer .sidebar :is(div, ul) {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
