@@ -1,3 +1,5 @@
+@use 'mixin' as mix;
+
 .flexContainer {
     composes: sideBySideCenter from 'styles/utils.module.scss';
 }
@@ -15,4 +17,13 @@
 
 .subtitle {
     font-size: var(--small-heading2);
+}
+
+/* image */
+.image {
+    width: 100%;
+
+    @include mix.mq {
+        width: 50%;
+    }
 }
