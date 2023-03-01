@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div className={classes.stack}>
             <h3 className={classes.heading}>Contact</h3>
-            <Social />
+            <Social iconSize='30px' />
             <address>cube@web.mail.address</address>
         </div>
     );
