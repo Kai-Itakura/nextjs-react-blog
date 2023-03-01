@@ -5,10 +5,12 @@ import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from "@/components/two-col
 import Hero from "components/hero";
 import Image from "next/legacy/image";
 import eyecatch from "images/about.jpg";
+import Meta from "@/components/meta";
 
 const About = () => {
     return (
         <Container>
+            <Meta pageTitle='アバウト' />
             <Hero title='About' subtitle='About development activities' />
             <figure>
                 <Image
