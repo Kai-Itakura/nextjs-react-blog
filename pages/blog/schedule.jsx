@@ -2,6 +2,10 @@ import Container from '@/components/container';
 import { getPostBySlug } from 'lib/api';
 import PostHeader from 'components/post-header';
 import Image from 'next/legacy/image';
+import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from '@/components/two-column';
+import PostBody from '@/components/post-body';
+import ConvertBody from '@/components/convert-body';
+import PostCategories from '@/components/post-categories';
 
 const Schedule = ({
     title,
@@ -25,6 +29,16 @@ const Schedule = ({
                         property
                     />
                 </figure>
+                <TwoColumn>
+                    <TwoColumnMain>
+                        <PostBody>
+                            <ConvertBody contentHTML={content}/>
+                        </PostBody>
+                    </TwoColumnMain>
+                    <TwoColumnSidebar>
+                        <PostCategories categories={categories} />
+                    </TwoColumnSidebar>
+                </TwoColumn>
             </article>
         </Container>
     );

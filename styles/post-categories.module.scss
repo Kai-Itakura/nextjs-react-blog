@@ -1,0 +1,23 @@
+@use 'mixin' as mix;
+
+.flexContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    color: var(--gray-50);
+
+    @include mix.mq {
+        flex-direction: column;
+    }
+
+    .heading {
+        font-size: var(--small-heading2);
+    }
+}
+
+.list {
+    composes: flexContainer;
+    font-size: var(--small-heading3);
+    gap: .75rem;
+}
+
