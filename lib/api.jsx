@@ -9,11 +9,24 @@ export const getPostBySlug = async (slug) => {
     try {
         const post = await client.get({
             endpoint: 'blogs',
-            queries: {filters: `slug[equals]${slug}`},
+            queries: { filters: `slug[equals]${slug}` },
         });
         return post.contents[0];
-    } catch(err) {
-        console.log('-- getPostBySlug --');
+    } catch (err) {
+        console.log('~~ getPostBySlug ~~');
         console.log(err)
+    }
+}
+
+export const getAllSlugs = async (limit = 100) => {
+    try {
+        const slug = await client.get({
+            endpoint: 'blogs',
+            queries: { fields: 'title,slug', orders: '-publishDate', limit: limit },
+        })
+        return slug.contents;
+    } catch (err) {
+        console.log('~~ getAllSlugs ~~');
+        console.log(err);
     }
 }
