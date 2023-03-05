@@ -23,7 +23,7 @@
 .image {
     width: 100%;
 
-    @include mix.mq {
+    @include mix.mq(pc) {
         width: 50%;
     }
 }

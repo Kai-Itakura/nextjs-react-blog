@@ -6,7 +6,7 @@
     gap: 1.25rem;
     color: var(--gray-50);
 
-    @include mix.mq {
+    @include mix.mq(pc) {
         flex-direction: column;
     }
 

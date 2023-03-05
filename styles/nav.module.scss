@@ -1,0 +1,108 @@
+@use 'mixin' as mix;
+
+/* ボタン */
+.btn {
+    @include mix.mq(pc) {
+        display: none;
+    }
+
+    @include mix.mq(sp) {
+        all: unset;
+        outline: revert;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        position: relative;
+        z-index: 200;
+        display: grid;
+        place-items: center;
+
+        &::before,
+        &::after,
+        .bar {
+            grid-area: 1/1;
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background-color: currentColor;
+            transition: transform .4s;
+        }
+    }
+}
+
+.close {
+    .btn {
+        @include mix.mq(sp) {
+            color: var(--gray-75);
+
+            &::before {
+                transform: translateY(-8px);
+            }
+
+            &::after {
+                transform: translateY(8px);
+            }
+        }
+    }
+}
+
+.open {
+    .btn {
+        @include mix.mq(sp) {
+            color: var(--white);
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+
+            .bar {
+                transform: scale(0);
+            }
+        }
+    }
+
+    .list {
+        transform: translateX(-100%);
+    }
+}
+
+.list {
+    display: flex;
+    gap: 2rem;
+
+    @include mix.mq(sp) {
+        position: fixed;
+        inset: 0 -100% 0 100%;
+        z-index: 100;
+        background: rgba(0, 0, 0, .8);
+        color: var(--white);
+        transition: transform .4s;
+        display: grid;
+        gap: 40px;
+        place-content: center;
+        text-align: center;
+    }
+}
+
+/* ホバー */
+@media (hover: hover) {
+    .list a:hover {
+        color: var(--accent);
+    }
+}
+
+@media (hover: none) {
+    .list a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .list a:active {
+        color: var(--accent);
+    }
+}
