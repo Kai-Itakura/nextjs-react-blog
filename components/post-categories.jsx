@@ -13,7 +13,7 @@ const PostCategories = ({ categories }) => {
             <ul className={classes.list}>
                 {categories.map(({ name, slug }) => (
                     <li key={slug}>
-                        <Link href={`blog/category/${slug}`}>{name}</Link>
+                        <Link href={`/blog/category/${slug}`}>{name}</Link>
                     </li>
                 ))}
             </ul>
